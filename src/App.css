@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.red {
+  background-color: red;
+}
+
+.VoteButton {
+  background-color: #000;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  box-shadow: 0px 15px 44px rgba(249, 98, 47, 0.42);
+}

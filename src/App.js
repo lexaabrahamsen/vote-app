@@ -36,7 +36,8 @@ class App extends Component {
   handleEvent = memberId => {
     const updatedList = this.state.members.map(member => {
       if (member.id === memberId) {
-        return Object.assign({}, member, {
+        return;
+        Object.assign({}, member, {
           votes: member.votes + 1
         });
       } else {
@@ -51,17 +52,24 @@ class App extends Component {
 
   render() {
     return this.state.members.map(member => (
-      <Beatle
-        key={member.id}
-        id={member.id}
-        name={member.name}
-        votes={member.votes}
-        onVote={this.handleEvent}
-      />
+      <div className="red">
+        <Beatle
+          key={member.id}
+          id={member.id}
+          name={member.name}
+          votes={member.votes}
+          onVote={this.handleEvent}
+        />
+      </div>
     ));
   }
 }
 
+class Title extends Component {
+  render() {
+    return <div className="App">Hello</div>;
+  }
+}
 class Beatle extends Component {
   handleClick = () => this.props.onVote(this.props.id);
 
@@ -69,7 +77,10 @@ class Beatle extends Component {
     return (
       <div className="App">
         {this.props.name}
-        <button onClick={this.handleClick}>+</button> {this.props.votes}
+        <button className="VoteButton" onClick={this.handleClick}>
+          +
+        </button>{" "}
+        {this.props.votes}
       </div>
     );
   }
