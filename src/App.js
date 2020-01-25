@@ -52,7 +52,7 @@ class App extends Component {
 
   render() {
     return this.state.members.map(member => (
-      <div className="red">
+      <div className="container" className="card">
         <Beatle
           key={member.id}
           id={member.id}
