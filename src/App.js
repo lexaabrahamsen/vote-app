@@ -36,8 +36,7 @@ class App extends Component {
   handleEvent = memberId => {
     const updatedList = this.state.members.map(member => {
       if (member.id === memberId) {
-        return;
-        Object.assign({}, member, {
+        return Object.assign({}, member, {
           votes: member.votes + 1
         });
       } else {
@@ -52,14 +51,18 @@ class App extends Component {
 
   render() {
     return this.state.members.map(member => (
-      <div className="container" className="card">
-        <Beatle
-          key={member.id}
-          id={member.id}
-          name={member.name}
-          votes={member.votes}
-          onVote={this.handleEvent}
-        />
+      <div className="wrapper">
+        <div className="main">
+          <div className="card">
+            <Beatle
+              key={member.id}
+              id={member.id}
+              name={member.name}
+              votes={member.votes}
+              onVote={this.handleEvent}
+            />
+          </div>
+        </div>
       </div>
     ));
   }
