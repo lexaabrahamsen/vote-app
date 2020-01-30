@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Beatle from "./components/beatle";
 
 const list = [
   {
@@ -51,17 +52,15 @@ class App extends Component {
 
   render() {
     return this.state.members.map(member => (
-      <div className="wrapper">
-        <div className="main">
-          <div className="card">
-            <Beatle
-              key={member.id}
-              id={member.id}
-              name={member.name}
-              votes={member.votes}
-              onVote={this.handleEvent}
-            />
-          </div>
+      <div>
+        <div className="card">
+          <Beatle
+            key={member.id}
+            id={member.id}
+            name={member.name}
+            votes={member.votes}
+            onVote={this.handleEvent}
+          />
         </div>
       </div>
     ));
@@ -70,22 +69,7 @@ class App extends Component {
 
 class Title extends Component {
   render() {
-    return <div className="App">Hello</div>;
-  }
-}
-class Beatle extends Component {
-  handleClick = () => this.props.onVote(this.props.id);
-
-  render() {
-    return (
-      <div className="App">
-        {this.props.name}
-        <button className="VoteButton" onClick={this.handleClick}>
-          +
-        </button>{" "}
-        {this.props.votes}
-      </div>
-    );
+    return <div></div>;
   }
 }
 
