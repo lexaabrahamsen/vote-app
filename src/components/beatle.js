@@ -7,12 +7,14 @@ class Beatle extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="title-container__title">
         {this.props.name}
-        <button className="VoteButton" onClick={this.handleClick}>
-          +
-        </button>{" "}
-        {this.props.votes}
+        <div>
+          <button className="VoteButton" onClick={this.handleClick}>
+            +
+          </button>{" "}
+          <div>{this.props.votes}</div>
+        </div>
       </div>
     );
   }
